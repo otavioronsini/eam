@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# Qr-code e Turismo em Poços de Caldas (título provisório)
 
 `PPC-CC: PUC Poços de Caldas - Ciência da Computação`
 `Disciplina: NOME DA DISCIPLINA`
@@ -6,14 +6,16 @@
 
 ## Integrantes
 
-- Jeff Bezos
-- Bill Gates
-- Larry Ellison
-- Mark Zuckerberg
+- Pedro Henrique Garcia de Carvalho
+- Rômulo Carvalho Reis
+- Otavio Silva Ronsini
+- Pedro Henrique Luz Gonçalves
+- Otávio Bruno Barbosa de Oliveira
+
 
 ## Professor
 
-- Mestre Yoda
+- Will Ricardo dos Santos Machado
 
 # Documentação
 
