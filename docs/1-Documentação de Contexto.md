@@ -1,11 +1,12 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+O projeto baseia-se em uma gamificação do turismo local, visando aumentar o engajamento de visistantes com o patrimônio histórico e comercial de Poços de Caldas. Feito com uma lógica sistêmica de 'caça ao tesouro', o app incentiva o usuário a visitar pontos turísticos, realizar check-ins geolocalizados e resolver quizzes históricos. Em troca, o turista desbloqueia conquistas digitais e recebe cupons de desconto reais para serem utilizados na rede gastronômica e de hotelaria local, fomentando, como explicitado no início, a economia regional de forma lúdica.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+O projeto visa preencher um espaço vazio no mundo digital em Poços de Caldas, que é a gamificação turística com prêmios reais (cupons e conquistas).
+
+Assim, ela será utilizada na ponte entre pontos reais e turísticos na cidade mineira, e mapa digital que indica as localidades a serem vizitadas, sendo o uso de Qr-code's o principal aparato conector dos dois.
 
 Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
 
