@@ -9,8 +9,6 @@
 - Pedro Henrique Garcia de Carvalho
 - Rômulo Carvalho Reis
 - Otavio Silva Ronsini
-- Pedro Henrique Luz Gonçalves
-- Otávio Bruno Barbosa de Oliveira
 
 
 ## Professor
