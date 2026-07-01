@@ -287,4 +287,3 @@ Os testes demonstraram que as principais funcionalidades do aplicativo foram exe
 As observações coletadas durante os testes indicaram apenas sugestões de melhorias relacionadas à experiência do usuário, não sendo identificados problemas críticos que comprometessem a utilização do sistema.
 
 Dessa forma, conclui-se que o aplicativo atende aos requisitos funcionais propostos e apresenta um nível satisfatório de usabilidade para os perfis de cliente e estabelecimento.
-```
