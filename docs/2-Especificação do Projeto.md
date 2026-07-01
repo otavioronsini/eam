@@ -11,7 +11,7 @@ Backend / BaaS: Firebase Authentication para gestão de usuários e Firestore pa
 
 ## Requisitos Funcionais
 
-# Módulo Empresa (B2B):
+### Módulo Empresa (B2B):
 
 Cadastro e autenticação do estabelecimento.
 
@@ -20,7 +20,7 @@ Geração de QR Codes dinâmicos e atrelados a um desconto/benefício.
 Leitura e validação de cupons resgatados pelos clientes.
 
 
-# Módulo Usuário (B2C):
+### Módulo Usuário (B2C):
 
 Cadastro e autenticação do usuário.
 
