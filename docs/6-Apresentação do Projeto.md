@@ -12,6 +12,7 @@ O estabelecimento escolhe seu plano, cadastra suas recompensas e gera QR Codes d
 
 <p align="center">
   <img src="AppImages/Screenshot_20260630_215107.png" width="200"/>
+  <img src="AppImages/Screenshot_20260630_215344.png" width="200"/>
   <img src="AppImages/Screenshot_20260630_215426.png" width="200"/>
   <img src="AppImages/Screenshot_20260630_215525.png" width="200"/>
 </p>
