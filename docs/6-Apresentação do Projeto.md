@@ -22,7 +22,7 @@ O cliente utiliza a câmera para ler o QR Code, acumula pontos e acompanha seu p
 
 <p align="center">
   <img src="AppImages/Screenshot_20260630_215651.png" width="250"/>
-  <img src="AppImages/Screenshot_20260630_215656.jpg" width="250"/>
+  <img src="AppImages/Screenshot_20260630_215656.png" width="250"/>
 </p>
 
 ---
