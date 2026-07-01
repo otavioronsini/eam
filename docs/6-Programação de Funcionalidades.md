@@ -1,15 +1,15 @@
-# Programação de Funcionalidades
+## Programação de Funcionalidades
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
+A tabela a seguir apresenta as funcionalidades desenvolvidas e os respectivos artefatos de código que as implementam no sistema, divididos entre a interface (Telas), a lógica de negócio (Funcionalidades) e a comunicação com o banco de dados (Domain).
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
-
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
-
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+| Funcionalidade | Módulo/Tela | Artefato (Código-Fonte) |
+| :--- | :--- | :--- |
+| Autenticação de Usuários | Home / Conta | `telas/home_page.dart`, `domain/firebase_auth_repository.dart` |
+| Assinatura e Planos | Planos da Empresa | `telas/planos_page.dart`, `funcionalidades/plano.dart` |
+| Gestão da Empresa e Estabelecimento | Área da Empresa | `telas/empresa_page.dart`, `funcionalidades/cadastra_empresa.dart`, `domain/firestore_empresa_repository.dart` |
+| Mapas e Geolocalização | Seleção de Endereço | `funcionalidades/mapa_selecao.dart`, `funcionalidades/geocoding_service.dart` |
+| Geração de QR Code (Empresa) | Criar QR Code | `funcionalidades/gerar_qr_code.dart` |
+| Leitura de QR Code (Cliente) | Scanner | `funcionalidades/leitor_qr.dart` |
+| Carteira do Cliente | Minhas Carteiras | `telas/cliente_page.dart`, `domain/firestore_cliente_repository.dart` |
+| Catálogo e Resgate de Recompensas | Detalhes do Restaurante | `telas/restaurante_detalhe_page.dart`, `funcionalidades/recompensa.dart`, `funcionalidades/pedido.dart` |
+| Painel Administrativo (Superusuário)| Admin | `telas/superusuario_painel_page.dart`, `funcionalidades/superusuario.dart` |
