@@ -40,5 +40,5 @@ O cliente utiliza o app como uma carteira digital de fidelidade para todos os es
 
 * **Resgate de Recompensas:** Tela de detalhes do estabelecimento mostrando o saldo atual (ex: 1000 pts) e as recompensas disponíveis para resgate.
 <p align="center">
-  <img src="AppImages/Screenshot_20260630_215656.jpg" width="250"/>
+  <img src="AppImages/Screenshot_20260630_215656.png" width="250"/>
 </p>
