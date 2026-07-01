@@ -1,77 +1,250 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+## Visão Geral
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+O **GRUDA AÍ!** é uma aplicação mobile desenvolvida em **Flutter**, cujo objetivo é gerenciar programas de fidelidade entre estabelecimentos comerciais e clientes por meio de QR Codes. A solução utiliza uma arquitetura em camadas, separando a interface do usuário, a lógica de negócio, os serviços de acesso aos dados e a infraestrutura fornecida pelo Firebase.
 
-## Diagrama de componentes
+A aplicação possui dois perfis de utilização:
 
-Diagrama que permite a modelagem física de um sistema, através da visão dos seus componentes e relacionamentos entre os mesmos.
+- **Cliente (B2C):** responsável por escanear QR Codes, acumular pontos e resgatar recompensas.
+- **Empresa (B2B):** responsável pelo gerenciamento do estabelecimento, cadastro de recompensas e geração de QR Codes.
 
-Exemplo: 
+O armazenamento das informações é realizado no **Cloud Firestore**, enquanto a autenticação dos usuários é feita pelo **Firebase Authentication**.
 
-Os componentes que fazem parte da solução são apresentados na Figura XX.
+---
 
-![Diagrama de Componentes](img/componentes.png)
-<center>Figura XX - Arquitetura da Solução</center>
+# Diagrama de Componentes
 
-A solução implementada conta com os seguintes módulos:
-- **Navegador** - Interface básica do sistema  
-  - **Páginas Web** - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
-   - **Local Storage** - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON. São eles: 
-     - **Canais** - seções de notícias apresentadas 
-     - **Comentários** - registro de opiniões dos usuários sobre as notícias
-     - **Preferidas** - lista de notícias mantidas para leitura e acesso posterior
- - **News API** - plataforma que permite o acesso às notícias exibidas no site.
- - **Hospedagem** - local na Internet onde as páginas são mantidas e acessadas pelo navegador. 
+A Figura 1 apresenta a arquitetura da solução.
 
-> **Links Úteis**:
->
-> - [Whimsical](https://whimsical.com/)
+```text
+                        +----------------------+
+                        |     Usuário          |
+                        | Cliente / Empresa    |
+                        +----------+-----------+
+                                   |
+                                   |
+                      Interface Flutter (Mobile)
+                                   |
+        +--------------------------+-------------------------+
+        |                          |                         |
+        |                          |                         |
++----------------+        +------------------+     +----------------+
+|   Telas (UI)   | -----> | Regras de Negócio| ---> | Serviços       |
+| Widgets        |        | Controllers      |      | Firebase       |
++----------------+        +------------------+      +--------+-------+
+                                                              |
+                          +-----------------------------------+
+                          |
+          +---------------+------------------+
+          |                                  |
++-------------------------+       +---------------------------+
+| Firebase Authentication |       | Cloud Firestore           |
+| Login e Cadastro        |       | Usuários, Empresas,       |
+|                         |       | Recompensas e QR Codes    |
++-------------------------+       +---------------------------+
+```
 
-Inclua um diagrama da solução e descreva os módulos e as tecnologias que fazem parte da solução. Discorra sobre o diagrama.
+**Figura 1 – Arquitetura da Solução**
 
-A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
-que o usuário entra na plataforma, ele é apresentado à tela inicial
-(Tela 1) onde ele é confrontado com as opões de editar seu perfil ou
-então visualizar sua galeria.
+---
 
-Caso ele opte por seguir pelo primeiro caminho (Editar Perfil), ele é
-redirecionado para a tela de edição de perfil (Tela 2), onde pode
-atualizar seus dados cadastrais. Nessa tela, o usuário também pode
-escolher para editar sua foto de perfil. Ao selecionar essa opção, ele é
-redirecionado para a Tela 3, onde ele a imagem expandida do perfil do
-usuário é mostrado. Ao selecionar a opção para atualizar a imagem, uma
-nova janela abre pedindo para o usuário fazer o upload da nova foto.
-Assim que o processo termina um pop-up exibe o status para o usuário
-(Tela 4) e o usuário é redirecionado para a Tela 2.
+# Componentes da Solução
 
-Caso o usuário opte seguir pelo segundo caminho (Visualizar Galeria) ele
-é redirecionado para a Tela 5 com todas as fotos que o usuário possui. O
-usuário pode clicar em um post qualquer para visualizar os detalhes do
-post (Tela 6). Nessa tela, ele pode então escolher editar o post, sendo
-redirecionado para a Tela 7. Ao editar as informações, o usuário pode
-escolher salvar ou deletar o post. Em ambos os casos o status é
-notificado para o usuário (Tela 8) e em seguida ele é redirecionado
-para a Tela 2.
+A solução é composta pelos seguintes módulos.
 
-![Exemplo de UserFlow](img/userflow.jpg)
+## Interface Mobile
 
+Desenvolvida utilizando **Flutter**, é responsável por toda a interação com o usuário.
 
-## Tecnologias Utilizadas
+Principais telas:
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+- Login;
+- Cadastro de Cliente;
+- Cadastro de Empresa;
+- Seleção de Plano;
+- Cadastro do Estabelecimento;
+- Seleção da Localização;
+- Carteira Digital;
+- Empresas Parceiras;
+- Geração de QR Code;
+- Cadastro de Recompensas;
+- Minha Conta.
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+---
 
+## Camada de Lógica de Negócio
 
-## Hospedagem
+Responsável por implementar as regras da aplicação.
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+Entre suas responsabilidades estão:
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+- validação de formulários;
+- gerenciamento da autenticação;
+- controle das regras de pontuação;
+- geração dos QR Codes;
+- gerenciamento das recompensas;
+- sincronização com o Firebase.
+
+---
+
+## Serviços
+
+Camada responsável pela comunicação entre o aplicativo e os serviços externos.
+
+São implementados serviços para:
+
+- autenticação;
+- leitura e gravação no Firestore;
+- gerenciamento de usuários;
+- gerenciamento de empresas;
+- armazenamento das recompensas;
+- atualização dos pontos dos clientes.
+
+---
+
+## Firebase Authentication
+
+Responsável pelo gerenciamento dos usuários do sistema.
+
+Principais funcionalidades:
+
+- cadastro;
+- login;
+- autenticação segura;
+- identificação do usuário logado.
+
+---
+
+## Cloud Firestore
+
+Banco de dados NoSQL utilizado pelo aplicativo.
+
+São armazenadas informações como:
+
+- usuários;
+- empresas;
+- localização dos estabelecimentos;
+- programas de fidelidade;
+- recompensas;
+- pontuação dos clientes;
+- QR Codes gerados.
+
+---
+
+## Leitor de QR Code
+
+O aplicativo utiliza a câmera do dispositivo para leitura dos QR Codes gerados pelos estabelecimentos.
+
+Após a leitura:
+
+1. o código é validado;
+2. os pontos são registrados;
+3. a carteira do cliente é atualizada.
+
+---
+
+# Fluxo da Solução
+
+O funcionamento da aplicação ocorre conforme o fluxo apresentado abaixo.
+
+```text
+Cliente/Empresa
+
+        │
+        ▼
+
+Aplicativo Flutter
+
+        │
+        ▼
+
+Validação das informações
+
+        │
+        ▼
+
+Firebase Authentication
+(Login/Cadastro)
+
+        │
+        ▼
+
+Cloud Firestore
+
+        │
+        ▼
+
+Atualização dos dados
+
+        │
+        ▼
+
+Resposta ao aplicativo
+
+        │
+        ▼
+
+Interface atualizada
+```
+
+---
+
+# Tecnologias Utilizadas
+
+A solução foi desenvolvida utilizando as seguintes tecnologias.
+
+| Tecnologia | Finalidade |
+|------------|------------|
+| Flutter | Desenvolvimento do aplicativo mobile |
+| Dart | Linguagem de programação |
+| Firebase Authentication | Autenticação dos usuários |
+| Cloud Firestore | Banco de dados em tempo real |
+| Google Maps / Platform Maps Flutter | Seleção da localização dos estabelecimentos |
+| QR Code Scanner | Leitura dos QR Codes |
+| Git | Controle de versão |
+| GitHub | Hospedagem do código-fonte |
+| Android Studio | Desenvolvimento e testes |
+| Visual Studio Code | Desenvolvimento |
+
+---
+
+# Arquitetura Tecnológica
+
+```text
+                Usuário
+                    │
+                    ▼
+            Aplicativo Flutter
+                    │
+      ┌─────────────┼─────────────┐
+      ▼             ▼             ▼
+ Interface      Firebase Auth   Google Maps
+                    │
+                    ▼
+            Cloud Firestore
+                    │
+                    ▼
+           Dados sincronizados
+                    │
+                    ▼
+             Atualização da UI
+```
+
+---
+
+# Hospedagem
+
+Como se trata de uma aplicação mobile, não existe hospedagem tradicional da interface.
+
+A solução foi disponibilizada através de um **APK Android**, permitindo sua instalação diretamente em dispositivos móveis.
+
+O código-fonte foi hospedado em um repositório privado no **GitHub**, utilizado para controle de versão e desenvolvimento colaborativo.
+
+A infraestrutura de backend é totalmente baseada no **Firebase**, utilizando os serviços gerenciados pelo Google para autenticação e armazenamento dos dados, eliminando a necessidade de servidores próprios.
+
+---
+
+# Considerações
+
+A arquitetura adotada privilegia a separação de responsabilidades entre interface, regras de negócio e persistência de dados, facilitando a manutenção e evolução do sistema. A utilização do Flutter permite o desenvolvimento de uma interface única para dispositivos Android, enquanto o Firebase fornece serviços escaláveis para autenticação e armazenamento das informações do programa de fidelidade.
