@@ -12,12 +12,11 @@ Caso não seja necessário executar o código-fonte, é possível utilizar a ver
 
 ## Instalação
 
-1. Transfira o arquivo `flutter-apk.zip` para o dispositivo Android, caso o download tenha sido realizado em um computador.
-2. Extraia o conteúdo da pasta e baixe o arquivo 'app-release.apk'
-3. Abra o arquivo APK no dispositivo.
-4. Caso seja solicitado, permita a instalação de aplicativos de fontes desconhecidas nas configurações do Android.
-5. Confirme a instalação e aguarde sua conclusão.
-6. Após instalada, a aplicação estará disponível na lista de aplicativos do dispositivo.
+1. Transfira o arquivo `app-release.apk` para o dispositivo Android, caso o download tenha sido realizado em um computador.
+2. Abra o arquivo APK no dispositivo.
+3. Caso seja solicitado, permita a instalação de aplicativos de fontes desconhecidas nas configurações do Android.
+4. Confirme a instalação e aguarde sua conclusão.
+5. Após instalada, a aplicação estará disponível na lista de aplicativos do dispositivo.
 
 > **Observação:** Caso o Android exiba um aviso de segurança, selecione a opção para prosseguir com a instalação, desde que o APK tenha sido obtido diretamente do repositório oficial do projeto.
 
