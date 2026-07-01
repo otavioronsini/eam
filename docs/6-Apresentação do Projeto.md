@@ -17,7 +17,7 @@ O estabelecimento escolhe seu plano, cadastra suas recompensas e gera QR Codes d
   <img src="AppImages/Screenshot_20260630_215525.png" width="200"/>
 </p>
 
-### Visão do Cliente (Carteira)
+### Visão do Cliente
 O cliente utiliza a câmera para ler o QR Code, acumula pontos e acompanha seu progresso até o resgate das recompensas.
 
 <p align="center">
@@ -27,7 +27,7 @@ O cliente utiliza a câmera para ler o QR Code, acumula pontos e acompanha seu p
 
 ---
 
-## 3. Por Baixo do Capô (Arquitetura)
+## 3. Arquitetura
 O sistema não é apenas um protótipo visual. A base tecnológica garante que ele funcione de forma integrada e escalável:
 *   **Front-end Mobile:** Flutter (Dart), garantindo performance nativa.
 *   **Back-end / BaaS:** Firebase (Authentication e Firestore para banco de dados NoSQL em tempo real).
